@@ -64,6 +64,18 @@ public class AbstractSeries<V, E extends ISeriesEntry<V>> implements ISeries<V, 
 	 */
 	private Number yAxis;
 
+	/**
+	 * De size in procenten
+	 */
+	private String size;
+
+	/**
+	 * De inner size in procenten
+	 */
+	private String innerSize;
+
+	private Boolean dataLabels;
+
 	@Override
 	public List<E> getData()
 	{
@@ -143,4 +155,42 @@ public class AbstractSeries<V, E extends ISeriesEntry<V>> implements ISeries<V, 
 		this.yAxis = yAxis;
 		return (T) this;
 	}
+
+	public String getSize()
+	{
+		return size;
+	}
+
+	@SuppressWarnings("unchecked")
+	public <T extends AbstractSeries<V, E>> T setSize(String size)
+	{
+		size.indexOf('%');
+		this.size = size;
+		return (T) this;
+	}
+
+	public String getInnerSize()
+	{
+		return innerSize;
+	}
+
+	@SuppressWarnings("unchecked")
+	public <T extends AbstractSeries<V, E>> T setInnerSize(String innerSize)
+	{
+		this.innerSize = innerSize;
+		return (T) this;
+	}
+
+	public Boolean getDataLabels()
+	{
+		return dataLabels;
+	}
+
+	@SuppressWarnings("unchecked")
+	public <T extends AbstractSeries<V, E>> T setDataLabels(Boolean dataLabels)
+	{
+		this.dataLabels = dataLabels;
+		return (T) this;
+	}
+
 }
