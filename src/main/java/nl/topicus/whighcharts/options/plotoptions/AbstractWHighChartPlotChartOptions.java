@@ -34,6 +34,12 @@ public class AbstractWHighChartPlotChartOptions<T extends AbstractWHighChartPlot
 	 */
 	private Number fillOpacity;
 
+	/**
+	 * Whether to stack the values of each series on top of each other. Possible values
+	 * are null to disable, "normal" to stack by value or "percent". Defaults to null.
+	 */
+	private String stacking;
+
 	public WHighChartPlotDashStyleType getDashStyle()
 	{
 		return dashStyle;
@@ -70,5 +76,17 @@ public class AbstractWHighChartPlotChartOptions<T extends AbstractWHighChartPlot
 	{
 		this.events = events;
 		return this;
+	}
+
+	@SuppressWarnings("unchecked")
+	public T setStacking(String stacking)
+	{
+		this.stacking = stacking;
+		return (T) this;
+	}
+
+	public String getStacking()
+	{
+		return stacking;
 	}
 }
