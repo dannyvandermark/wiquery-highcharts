@@ -65,12 +65,12 @@ public class AbstractSeries<V, E extends ISeriesEntry<V>> implements ISeries<V, 
 	private Number yAxis;
 
 	/**
-	 * De size in procenten
+	 * De size in procenten, setten als x + "%" dus bv. 45%
 	 */
 	private String size;
 
 	/**
-	 * De inner size in procenten
+	 * De size in procenten, setten als x + "%" dus bv. 45%
 	 */
 	private String innerSize;
 
@@ -164,7 +164,6 @@ public class AbstractSeries<V, E extends ISeriesEntry<V>> implements ISeries<V, 
 	@SuppressWarnings("unchecked")
 	public <T extends AbstractSeries<V, E>> T setSize(String size)
 	{
-		size.indexOf('%');
 		this.size = size;
 		return (T) this;
 	}
