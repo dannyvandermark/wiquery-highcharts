@@ -74,6 +74,11 @@ public class AbstractSeries<V, E extends ISeriesEntry<V>> implements ISeries<V, 
 	 */
 	private String innerSize;
 
+	/**
+	 * Manually set the color of the given Serie
+	 */
+	private String color;
+
 	private Boolean dataLabels;
 
 	@Override
@@ -189,6 +194,18 @@ public class AbstractSeries<V, E extends ISeriesEntry<V>> implements ISeries<V, 
 	public <T extends AbstractSeries<V, E>> T setDataLabels(Boolean dataLabels)
 	{
 		this.dataLabels = dataLabels;
+		return (T) this;
+	}
+
+	public String getColor()
+	{
+		return color;
+	}
+
+	@SuppressWarnings("unchecked")
+	public <T extends AbstractSeries<V, E>> T setColor(String color)
+	{
+		this.color = color;
 		return (T) this;
 	}
 
